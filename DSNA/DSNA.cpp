@@ -59,8 +59,6 @@ BOOL GetSettings()
 
 BOOL Begin()
 {
-    MessageBox(NULL, "ALT", "ALT", MB_OK);
-
     // Get user settings
     if (GetSettings() == false)
     {
