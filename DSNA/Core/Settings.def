@@ -1,0 +1,9 @@
+// Taken and customized from Durante's DSFix
+// xmacro file for .ini setting definition
+// format: (type, cname, ininame, default value)
+
+// Region filter (worldwide, far, regional, close)
+SETTING(std::string, RegionFilter, "RegionFilter", "worldwide");
+
+// Matchmaking (everyone, blocklist, friendsonly, custom)
+SETTING(std::string, MatchmakingMode, "Matchmaking", "everyone");

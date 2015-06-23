@@ -1,0 +1,14 @@
+#pragma once
+#include "stdafx.h"
+#include "Libs\steam\steam_api.h"
+
+typedef bool(__thiscall* SendP2PPacket)(void*, CSteamID, const void*, uint32, EP2PSend, int);   // vft[0]
+typedef bool(__thiscall* ReadP2PPacket)(void*, void*, uint32, uint32*, CSteamID*, int);         // vft[2]
+
+extern SendP2PPacket oSendP2PPacket;
+extern ReadP2PPacket oReadP2PPacket;
+
+extern bool __fastcall tSendP2PPacket(void*, void*, CSteamID, const void*, uint32, EP2PSend, int);
+extern bool __fastcall tReadP2PPacket(void*, void*, void*, uint32, uint32*, CSteamID*, int);
+
+extern ISteamFriends* sFriends;
