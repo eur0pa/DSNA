@@ -119,14 +119,11 @@
     <ClInclude Include="Libs\steam\isteamvideo.h" />
     <ClInclude Include="Libs\steam\matchmakingtypes.h" />
     <ClInclude Include="Libs\steam\steamclientpublic.h" />
-    <ClInclude Include="Libs\steam\steamcontrollerpublic.h" />
     <ClInclude Include="Libs\steam\steamencryptedappticket.h" />
     <ClInclude Include="Libs\steam\steamhttpenums.h" />
     <ClInclude Include="Libs\steam\steamps3params.h" />
     <ClInclude Include="Libs\steam\steamtypes.h" />
     <ClInclude Include="Libs\steam\steamuniverse.h" />
-    <ClInclude Include="Libs\steam\steamvr.h" />
-    <ClInclude Include="Libs\steam\steamvr_flat.h" />
     <ClInclude Include="Libs\steam\steam_api.h" />
     <ClInclude Include="Libs\steam\steam_api_flat.h" />
     <ClInclude Include="Libs\steam\steam_gameserver.h" />

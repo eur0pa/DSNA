@@ -6,16 +6,34 @@ AddRequestLobbyListDistanceFilter oAddRequestLobbyListDistanceFilter = nullptr;
 
 extern ERegionFilterMode eRegionFilterMode;
 
-void __fastcall tAddRequestLobbyListDistanceFilter(void* __this, void* /* edx */, ELobbyDistanceFilter eLobbyDistanceFilter)
+__declspec(naked) void __stdcall tAddRequestLobbyListDistanceFilter(ELobbyDistanceFilter eLobbyDistanceFilter)
 {
-    if (eRegionFilterMode != k_ERegionFilterModeWorldwide)
+    void* This;
+    char msgbuf[255];
+
+    _asm
     {
-        debug("AddRequestLobbyListDistanceFilter(%d) [rerouted to %d]", eLobbyDistanceFilter, eRegionFilterMode);
-        eLobbyDistanceFilter = (ELobbyDistanceFilter)eRegionFilterMode;
+        push ebp
+            mov ebp, esp
+            sub esp, __LOCAL_SIZE
+            mov This, ecx
+                push eRegionFilterMode
+                call oAddRequestLobbyListDistanceFilter
+            mov ecx, This
+            mov esp, ebp
+        pop ebp
+        retn 4
     }
-    else
-    {
-        debug("AddRequestLobbyListDistanceFilter(%d)", eLobbyDistanceFilter);
-    }
-    return oAddRequestLobbyListDistanceFilter(__this, eLobbyDistanceFilter);
 }
+
+//void __fastcall tAddRequestLobbyListDistanceFilter(void* __this, void* /* edx */, ELobbyDistanceFilter eLobbyDistanceFilter)
+//{
+//if (eRegionFilterMode != k_ERegionFilterModeWorldwide)
+//{
+//eLobbyDistanceFilter = (ELobbyDistanceFilter)eRegionFilterMode;
+//}
+//debug("AddRequestLobbyListDistanceFilter(%d) [rerouted to %d]", eLobbyDistanceFilter, eRegionFilterMode);
+//oAddRequestLobbyListDistanceFilter(__this, eLobbyDistanceFilter);
+//    
+//return;
+//}

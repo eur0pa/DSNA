@@ -44,7 +44,6 @@ BOOL SteamHooks()
         log_err("failed to create hooks for SteamMatchmaking");
         return false;
     }
-
     debug("SteamMatchmaking->AddRequestLobbyDistanceFilter @ 0x%p t-> 0x%p", oAddRequestLobbyListDistanceFilter, tAddRequestLobbyListDistanceFilter);
     // </SteamMatchmaking>
 
@@ -86,7 +85,6 @@ BOOL SteamHooks()
         log_err("failed to enable hooks for SteamNetworking");
         return false;
     }
-
     debug("SteamNetworking->SendP2PPacket() @ 0x%p t-> 0x%p", oSendP2PPacket, tSendP2PPacket);
     debug("SteamNetworking->ReadP2PPacket() @ 0x%p t-> 0x%p", oReadP2PPacket, tReadP2PPacket);
     // </SteamNetworking>
@@ -102,7 +100,8 @@ BOOL RemoveSteamHooks()
         return false;
     }
 
-    if (DetourDetach(&(PVOID&)oSendP2PPacket, (PVOID)tSendP2PPacket) != NO_ERROR ||
+    if (DetourDetach(&(PVOID&)oAddRequestLobbyListDistanceFilter, (PVOID)tAddRequestLobbyListDistanceFilter) != NO_ERROR ||
+        DetourDetach(&(PVOID&)oSendP2PPacket, (PVOID)tSendP2PPacket) != NO_ERROR ||
         DetourDetach(&(PVOID&)oReadP2PPacket, (PVOID)tReadP2PPacket) != NO_ERROR)
     {
         return false;
