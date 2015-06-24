@@ -9,7 +9,6 @@ extern ERegionFilterMode eRegionFilterMode;
 __declspec(naked) void __stdcall tAddRequestLobbyListDistanceFilter(ELobbyDistanceFilter eLobbyDistanceFilter)
 {
     void* This;
-    char msgbuf[255];
 
     _asm
     {
