@@ -24,15 +24,3 @@ __declspec(naked) void __stdcall tAddRequestLobbyListDistanceFilter(ELobbyDistan
         retn 4
     }
 }
-
-//void __fastcall tAddRequestLobbyListDistanceFilter(void* __this, void* /* edx */, ELobbyDistanceFilter eLobbyDistanceFilter)
-//{
-//if (eRegionFilterMode != k_ERegionFilterModeWorldwide)
-//{
-//eLobbyDistanceFilter = (ELobbyDistanceFilter)eRegionFilterMode;
-//}
-//debug("AddRequestLobbyListDistanceFilter(%d) [rerouted to %d]", eLobbyDistanceFilter, eRegionFilterMode);
-//oAddRequestLobbyListDistanceFilter(__this, eLobbyDistanceFilter);
-//    
-//return;
-//}
