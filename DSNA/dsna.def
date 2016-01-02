@@ -1,0 +1,4 @@
+LIBRARY DSNA
+EXPORTS
+	DirectInput8Create
+    Direct3DCreate9

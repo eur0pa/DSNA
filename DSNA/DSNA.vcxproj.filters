@@ -153,6 +153,9 @@
     <ClInclude Include="Libs\steam\steam_gameserver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="d3d9\d3d9Wrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -182,14 +185,17 @@
     <ClCompile Include="Steam\Matchmaking.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="d3d9\d3d9Wrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="dinput8\dinput8.def">
-      <Filter>Source Files</Filter>
-    </None>
     <None Include="Core\Settings.def">
       <Filter>Source Files</Filter>
     </None>
     <None Include="DSNA.ini" />
+    <None Include="dsna.def">
+      <Filter>Source Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
